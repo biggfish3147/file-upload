@@ -1,0 +1,25 @@
+body{
+    font-family: "宋体", serif;
+    font-size: 20px;
+    background-color: burlywood;
+}
+
+.center{
+    padding: auto;
+    text-align: center;
+    margin: auto;
+}
+
+header{
+    width: 80%;
+    height: 12%;
+    padding: 30px;
+}
+
+footer{
+    width: 80%;
+    height: 10%;
+    padding: 10px;
+    clear: both;
+}
+

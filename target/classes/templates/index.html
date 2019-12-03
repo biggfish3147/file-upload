@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" content="text/html" http-equiv="Content-Type">
+    <title>Title</title>
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <!--    <script src=""></script>-->
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+    <style type="text/css">
+
+        .mainbody {
+            width: 80%;
+            /*height: 800px;*/
+            padding: auto 10px;
+            margin: auto;
+        }
+
+        .body_left {
+            position: relative;
+            width: 48%;
+            height: 800px;
+            float: left;
+            background-color: bisque;
+            border-right: 1px solid grey;
+            margin-right: 5px;
+        }
+
+        .body_right {
+            width: 48%;
+            height: 800px;
+            float: left;
+            background-color: azure;
+            border-left: 1px solid grey;
+            margin-left: 5px;
+        }
+
+        .body_title {
+            padding: 20px;
+        }
+
+        .body_image {
+            margin: 5px;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div th:replace="../public/common :: header"></div>
+
+<div class="center mainbody">
+    <div class="body_left">
+        <div class="body_title">
+            <!--  <span>左侧title</span>-->
+
+            <!--  <input type="button" value="文件上传"/>-->
+
+            <!--            <input type="file" name="file" id="file" multiple="multiple" /><br>-->
+            <form id="form" enctype="multipart/form-data">
+                <input type="file" name="file" id="file_form">
+            </form>
+            <!--    <span>左边Title</span>-->
+        </div>
+        <hr/>
+        <div class="body_image">
+            <img src="" alt="显示原始上传图片" id="img" title="Raw Image">
+        </div>
+    </div>
+    <div class="body_right">
+        <div class="body_title">
+            <input id="json_handle" type="button" value="json数据传输测试"/>
+            <input id="file_upload" type="button" value="文件上传"/>
+            <input id="file_show" type="button" value="图片回显"/>
+            <!--            <button>文件上传（图片）</button>-->
+            <!--    <span>右边Title</span>-->
+        </div>
+        <hr/>
+        <div class="body_image">
+            <img id="img_change" src="xingkong.jpeg" alt="显示处理后的图片" title="Result Image"/>
+        </div>
+    </div>
+</div>
+
+<div th:replace="../public/common :: footer"></div>
+
+<!--<div th:replace="../public/common :: header"></div>-->
+<!--<div th:replace="../public/common :: #footer"></div>-->
+
+<!--<div th:include="~{../public/common :: header}"></div>-->
+<!--<div >[(~{../public/common :: #footer})]</div>-->
+
+
+<script>
+
+    $("#file_form").change(function () {
+        console.log(this.files[0]);
+        var objUrl = getObjectURL(this.files[0]);//获取文件信息
+        // console.log("objUrl = " + objUrl);
+        if (objUrl) {
+            $("#img").attr("src", objUrl);
+        }
+    });
+
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL !== undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL !== undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL !== undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+    $("#json_handle").click(function () {
+            // function () {
+            // $.post("/handle_img", {
+            //     "id":"007",
+            //     "name":"picture_test",
+            //     "file":this.files[0]
+            //     },
+            //     function (data,status) {
+            //         alert("Data:"+data+"\nStatus:"+status);
+            //     }
+            // );
+            // }
+
+            $.ajax({
+                type: "POST",
+                url: "/json_handle",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(GetJsonData()),
+                dataType: "json",
+                // success: function (message) {
+                //     if (message > 0) {
+                //         alert("请求已提交！");
+                //     }
+                // },
+                // error: function (message) {
+                //     alert("请求提交失败！");
+                // }
+
+                success: function (jsonResult) {
+                    alert(jsonResult.id);
+                }
+            });
+        }
+    );
+
+    function GetJsonData() {
+        return {
+            "id": "007",
+            "name": "dddc"
+            // "file": $("#file").files[0]
+        };
+    }
+
+    $("#file_upload").click(function () {
+            var formdata = new FormData($('#form')[0]);
+            // formdata.append("file", $("file_form"));
+            console.log(formdata);
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "/img",
+                    contentType: false,
+                    processData: false,
+                    data: formdata,
+                    dataType: "json",
+                    success: function (ackdata) {
+                        alert("返回数据:" + ackdata.message);
+                    }
+
+                });
+            }
+        }
+    );
+
+    $("#file_show").click(function () {
+            var formdata = new FormData($('#form')[0]);
+            // formdata.append("file", $("file_form"));
+            console.log(formdata);
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "/img_show",
+                    contentType: false,
+                    processData: false,
+                    data: formdata,
+                    dataType: "text",
+                    success: function (file_path) {
+                        console.log(file_path);
+                        // alert("返回数据:" + file_path);
+                        if (file_path) {
+                            $("#img_change").attr("src", file_path);
+                        }
+                    }
+
+                });
+
+
+            }
+        }
+    );
+
+</script>
+
+</body>
+</html>

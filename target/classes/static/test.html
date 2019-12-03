@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        function testSpringParam(){
+            var name=$("#name").val();
+            var email=$("#email").val();
+
+            $.ajax({
+                type: 'POST',
+                url: 'paramurl/paramTest.do' ,
+                dataType: 'text',
+                contentType:'application/json;charset=UTF-8',
+                data:JSON.stringify([{'name':name,'email':email}]),  //提交json字符串数组，如果提交json字符串去掉[]
+                success:function(data){
+                    alert(data);
+                },
+                error:function(textStatus, errorThrown){
+                    console.log(textStatus);
+                    alert(textStatus);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<form action="" id="f1" name="f1">
+    <label for="name">姓名</label>
+    <input name="name" id="name" type="text" value="zhangsan1"><br>
+
+    <label for="email">邮箱</label>
+    <input name="email" id="email" type="text" value="zhangsan@163.com"><br><br>
+
+    <a href="#" onclick="testSpringParam();">测试</a>
+</form>
+</body>
+</html>
