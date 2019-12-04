@@ -1,0 +1,40 @@
+
+.mainBody {
+    width: 80%;
+    padding: auto 10px;
+    margin: auto;
+}
+
+.body_left {
+    position: relative;
+    width: 48%;
+    height: 800px;
+    float: left;
+    background-color: bisque;
+    border-right: 1px solid grey;
+    margin-right: 5px;
+}
+
+.body_right {
+    width: 48%;
+    height: 800px;
+    float: left;
+    background-color: azure;
+    border-left: 1px solid grey;
+    margin-left: 5px;
+}
+
+.body_title {
+    padding: 20px;
+}
+
+.body_image {
+    margin: 5px;
+}
+
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
