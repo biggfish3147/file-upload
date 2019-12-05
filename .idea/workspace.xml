@@ -7,36 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05f5f358-5e6b-41d5-b81e-1e816a2e5d5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lou/springboot/config/SpringBootWebMvcConfigurer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lou/springboot/controller/ImageHandleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lou/springboot/controller/ImageHandleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lou/springboot/controller/UploadController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/default.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/xingkong.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/default2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/Image-show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/image_show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/tempTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/upload-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lou/springboot/controller/ImageHandleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lou/springboot/controller/ImageHandleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lou/springboot/controller/UploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/xingkong.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/Image-show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image_show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/upload-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lou/springboot/controller/ImageHandleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lou/springboot/controller/FileController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,6 +134,7 @@
       <workItem from="1575346253191" duration="13360000" />
       <workItem from="1575426063019" duration="4770000" />
       <workItem from="1575430901476" duration="19000" />
+      <workItem from="1575530932686" duration="67000" />
     </task>
     <servers />
   </component>

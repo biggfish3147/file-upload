@@ -17,8 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * @author Biggfish
+ */
 @Controller
-public class ImageHandleController {
+public class FileController {
 
     /**
      * 读取文件上传后的存储根路径
